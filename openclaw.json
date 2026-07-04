@@ -6,7 +6,6 @@
         "primary": "google/gemini-2.5-flash"
       },
       "models": {
-        "google/gemini-3.1-pro-preview": {},
         "google/gemini-2.5-flash": {}
       }
     }
