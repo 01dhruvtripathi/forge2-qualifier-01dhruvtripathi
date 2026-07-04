@@ -38,7 +38,7 @@ npm run dev
 The UI will run at `http://localhost:5173`. Open this URL in your browser.
 
 ## Models Used
-- **Hermes (Brain)**: `google/gemini-3.1-pro` - Used for deep reasoning, scaffolding the implementation plan, and breaking the project down into subtasks for OpenClaw.
+- **Hermes (Brain)**: `google/gemini-2.5-flash` - Used for deep reasoning, scaffolding the implementation plan, and breaking the project down into subtasks for OpenClaw.
 - **OpenClaw (Coder)**: `google/gemini-2.5-flash` - Used for fast, iterative coding, executing shell commands, and scaffolding the Laravel + React apps.
 
 ## Live URL
