@@ -1,0 +1,7 @@
+gateway_verbose.log
+logs_dump.txt
+.openclaw/
+*.sqlite
+node_modules/
+vendor/
+.env
