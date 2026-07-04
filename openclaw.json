@@ -3,10 +3,10 @@
     "defaults": {
       "workspace": "C:\\Users\\hp\\.openclaw\\workspace",
       "model": {
-        "primary": "google/gemini-2.5-flash"
+        "primary": "groq/llama-3.3-70b-versatile"
       },
       "models": {
-        "google/gemini-2.5-flash": {}
+        "groq/llama-3.3-70b-versatile": {}
       }
     }
   },
@@ -14,7 +14,7 @@
     "mode": "local",
     "auth": {
       "mode": "token",
-      "token": "REDACTED"
+      "token": "82395874eeaa475aceb753450b31c3ccfe841ca2c8db5220"
     },
     "port": 18789,
     "bind": "loopback",
@@ -43,66 +43,68 @@
   },
   "tools": {
     "profile": "coding",
-    "web": {
-      "search": {
-        "provider": "gemini",
-        "enabled": true
+    "byProvider": {
+      "groq/llama-3.3-70b-versatile": {
+        "deny": [
+          "group:web",
+          "browser"
+        ]
       }
     }
   },
   "plugins": {
     "allow": [
       "slack",
-      "google",
-      "memory-core"
+      "groq"
     ],
     "entries": {
+      "groq": {
+        "enabled": true
+      },
       "slack": {
         "enabled": true
-      },
-      "google": {
-        "enabled": true
-      },
-      "memory-core": {
-        "config": {}
       }
     },
     "bundledDiscovery": "compat"
   },
-  "auth": {
-    "profiles": {
-      "google:default": {
-        "provider": "google",
-        "mode": "api_key"
-      }
-    }
+  "commands": {
+    "ownerAllowFrom": [
+      "slack:U0BFYJ2KD4Y"
+    ]
   },
   "channels": {
     "slack": {
       "enabled": true,
       "botToken": "REDACTED",
       "appToken": "REDACTED",
-      "groupPolicy": "open"
-    }
-  },
-  "hooks": {
-    "internal": {
-      "enabled": true,
-      "entries": {
-        "session-memory": {
+      "groupPolicy": "allowlist",
+      "allowFrom": [
+        "U0BFYJ2KD4Y"
+      ],
+      "channels": {
+        "#sprint-main": {
+          "enabled": true
+        },
+        "#agent-coder": {
+          "enabled": true
+        },
+        "#agent-log": {
           "enabled": true
         }
+      },
+      "capabilities": {
+        "interactiveReplies": true
       }
     }
   },
   "wizard": {
-    "lastRunAt": "2026-07-04T12:24:44.958Z",
+    "lastRunAt": "2026-07-04T08:25:21.186Z",
     "lastRunVersion": "2026.6.11",
     "lastRunCommand": "doctor",
     "lastRunMode": "local"
   },
   "meta": {
     "lastTouchedVersion": "2026.6.11",
-    "lastTouchedAt": "2026-07-04T12:24:45.450Z"
+    "lastTouchedAt": "2026-07-04T08:25:21.752Z"
   }
 }
