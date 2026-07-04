@@ -42,4 +42,4 @@ The UI will run at `http://localhost:5173`. Open this URL in your browser.
 - **OpenClaw (Coder)**: `google/gemini-2.5-flash` - Used for fast, iterative coding, executing shell commands, and scaffolding the Laravel + React apps.
 
 ## Live URL
-[Live App (Frontend)](https://your-kanban.vercel.app)
+[Live App (Frontend)](https://forge2-qualifier-01dhruvtripathi-vm.vercel.app/)
