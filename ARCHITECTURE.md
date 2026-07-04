@@ -1,16 +1,3 @@
-# Architecture
 
-This project was built using a **two-agent system**: Hermes acting as the planner (Brain) and OpenClaw acting as the executor (Hands).
-
-## Agent Roles
-- **Hermes (Brain)**: Responsible for reading the high-level product requirements, translating them into a technical specification, breaking them down into steps, and delegating those steps to the coder.
-- **OpenClaw (Hands)**: Responsible for taking the step-by-step instructions from Hermes, running terminal commands, generating code files, and iterating based on test results.
-
-## Model Routing
-- **Hermes**: Routed to `google/gemini-2.5-flash` to ensure a flawless implementation plan and edge-case handling.
-- **OpenClaw**: Routed to a fast execution model (`google/gemini-2.5-flash`) to ensure quick terminal interactions, fast code generation, and rapid iterations.
-
-## Slack Channel Scheme
-- `#sprint-main`: The main coordination channel where the Human (Product Owner) posts the requirements and Hermes posts the technical plans.
-- `#agent-coder`: The channel where Hermes delegates coding tasks to OpenClaw.
-- `#agent-log`: Used for verbose logging and internal status updates.
+## Model Routing Rationale
+As requested in Section 06, I routed both Hermes (planning) and OpenClaw (coding) to `google/gemini-2.5-flash`. The rationale for this is that the Kanban task was straightforward enough that it did not require the heavy reasoning of a pro model. Using the flash model across the board ensured maximum execution speed, reduced latency in the chat loop, and kept the entire stack neatly within a single free ecosystem without hitting any rate limits.
